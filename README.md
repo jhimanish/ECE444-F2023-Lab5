@@ -1,13 +1,13 @@
 # ECE444-F2023-Lab5 - Himanish Jindal
 This repo is a clone of https://github.com/mjhea0/flaskr-tdd
 
-# Part 2 Activity
+# Activity 2
 I've created unit test functions for our SQLAlchemy database in the following [file](https://github.com/ECE444-2023Fall/project-1-web-application-design-group22-premium-potatoes/pull/16/files#diff-142d762c5d7485f2807b608479fd8a10bf78a58f598d85e4d2ada795c7d230c8).
 
 PR for this change: [#16](https://github.com/ECE444-2023Fall/project-1-web-application-design-group22-premium-potatoes/pull/16)
 
 
-Activity 3:
+# Activity 3:
 Pros of TDD:
 - The main benefit of testing in general is to reveal bugs, assess quality, clarify the specification, and for verification purposes. 
 - It forces developers to automate our testing process from the beginning of the code development process. This allows for continuous testing as developers continue coding. This would also allow developers to setup the GitHub CI/CD Pipeline to test their code as well and ensure that code doesn't break with new commits/changes.
