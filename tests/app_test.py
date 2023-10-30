@@ -19,7 +19,7 @@ def client():
     with app.app_context():
         db.create_all()  # setup
         yield app.test_client()  # tests run here
-        # db.drop_all()  # teardown
+        db.drop_all()  # teardown
         
         
 def login(client, username, password):
@@ -82,3 +82,14 @@ def test_delete_message(client):
     rv = client.get('/delete/1')
     data = json.loads(rv.data)
     assert data["status"] == 1
+
+def test_search(client):
+    login(client, app.config["USERNAME"], app.config["PASSWORD"])
+    rv = client.post(
+        "/add",
+        data=dict(title="<Hello>", text="<strong>HTML</strong> allowed here"),
+        follow_redirects=True,
+    )
+    response = client.get("/search/?query=hello")
+    assert response.status_code == 200
+    assert b"<strong>HTML</strong> allowed here" in response.data
